@@ -110,15 +110,15 @@ Alternatively, you can use `tmux` to manage multiple terminals in one terminal. 
 
 ## Try a GUI application
 
-The default catkin workspace is `/workspaces/rss_workspace`. 
+The default catkin (FIXME) workspace is `/workspaces/smb_ros2_workspace`. 
 
 You can try to run the smb gazebo simulation inside the container to see if the GUI application works. 
 
 You can run the following command to start the simulation:
 
 ```bash
-cd /workspaces/rss_workspace
-catkin build smb_gazebo
+cd /workspaces/smb_ros2_workspace
+catkin (FIXME) build smb_gazebo
 source devel/setup.zsh
 roslaunch smb_gazebo sim.launch
 ```
@@ -126,5 +126,5 @@ roslaunch smb_gazebo sim.launch
 If everything goes well, you should see the Gazebo simulation running and the GUI on your screen or VNC viewer.
 
 {: .note}
-We highly recommend to read the [`Customizing the Workspace`](./rss-workspace.md#customizing-the-workspace) and [`Tips & Tricks`](./rss-workspace.md#tips-and-tricks) sections in the [RSS workspace](./rss-workspace.md) to learn how to customize your docker environment and boost your coding productivity.
+We highly recommend to read the [`Customizing the Workspace`](./smb_ros2_workspace.md#customizing-the-workspace) and [`Tips & Tricks`](./smb_ros2_workspace.md#tips-and-tricks) sections in the [SMB ROS2 workspace](./smb_ros2_workspace.md) to learn how to customize your docker environment and boost your coding productivity.
 

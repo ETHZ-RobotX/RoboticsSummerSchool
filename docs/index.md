@@ -24,7 +24,7 @@ Welcome to the documentation of the SuperMegaBot (SMB) for the ETHZ Robotics Sum
 ## 📘 Introduction
 This documentation aims to introduce the basic usage of the SuperMegaBot, a 4-wheeled skid-steered robot, in both simulation and real robot scenarios. Furthermore, it provides instructions on how to run different tasks using the robot and includes step-by-step tutorials.
 
-<!-- The experience is twofold: a [simulation environment](#smb-simulation) using Gazebo, and the physical robot. The software stack runs on ROS Noetic. -->
+<!-- The experience is twofold: a [simulation environment](#smb-simulation) using Gazebo, and the physical robot. The software stack runs on ROS Noetic FIXME. -->
 
 ## 📥 Install the SMB Software locally
 
@@ -47,7 +47,7 @@ For more information about the robot hardware, you can visit the [robot hardware
 
 
 ## 🐞 Issue Tracking
-Please use the [issues page](https://github.com/ETHZ-RobotX/SuperMegaBot/issues) to report any issues concerning the robots (hardware and software related issues).
+Please use the [issues page](https://github.com/ETHZ-RobotX/RoboticsSummerSchool/issues) to report any issues concerning the robots (hardware and software related issues).
 
 ## 📜 History
 The SuperMegaBot was originally developed by the ETH Construction Robotics group. It is now maintained by the [ETHZ RobotX Center](https://center-for-robotics.ethz.ch/).

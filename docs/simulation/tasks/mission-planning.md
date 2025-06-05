@@ -14,7 +14,7 @@ To start with, make sure the package is built,
 
 ```bash
 # build the package
-catkin build smb_mission_planner
+catkin (FIXME) build smb_mission_planner
 ```
 
 ## 🎥 Record a Mission

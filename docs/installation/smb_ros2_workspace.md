@@ -1,11 +1,11 @@
 ---
 layout: default
-title: RSS Workspace
+title: SMB ROS2 Workspace
 parent: Installation
 nav_order: 1
 ---
 
-# 🛠️ RSS Workspace
+# 🛠️ SMB ROS2 Workspace
 {: .no_toc }
 
 <details open markdown="block">
@@ -20,13 +20,13 @@ nav_order: 1
 ---
 
 {: .important }
-Please [create an issue](https://github.com/ETHZ-RobotX/rss_workspace/issues) for any missing library, package, driver, error, or any kind of unclear instruction related to the RSS Workspace.
+Please [create an issue](https://github.com/ETHZ-RobotX/smb_ros2_workspace/issues) for any missing library, package, driver, error, or any kind of unclear instruction related to the SMB ROS2 Workspace.
 
-The **RSS Workspace** is a all-in-one development environment for the Super Mega Bot (SMB). It contains all the necessary packages, tools, and configurations to develop, simulate, and test the SMB project.
+The **smb_ros2_workspace** is a all-in-one development environment for the Super Mega Bot (SMB). It contains all the necessary packages, tools, and configurations to develop, simulate, and test the SMB project.
 
 Under the hood, the workspace uses [Docker](https://www.docker.com/) and [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers) to provide a consistent development environment across different platforms.
 
-This has been tested on the following platforms:
+This has been tested on the following platforms: FIXME
 - ✅ Ubuntu 22.04/20.04 AMD64
 - ✅ Windows 11 AMD64
 - ✅ MacOS Sonoma AMD64 and ARM64 (Apple Silicon)
@@ -69,7 +69,7 @@ If you encounter any performance issues, you can adjust the resource allocation 
 - Install Real VNC Viewer by following [the official website](https://www.realvnc.com/en/connect/download/viewer)
 
 ### **(Optional)** SSH-agent
-- To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent. See the **preparation step 2** [here](https://github.com/ETHZ-RobotX/rss_workspace#preparation) for more details.
+- To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent. See the **preparation step 2** [here](https://github.com/ETHZ-RobotX/smb_ros2_workspace#preparation) for more details.
 
 ### **(Optional)** Fork the repository
 - If you want to customize your workspace and save your changes, you can fork the repository to your GitHub account and clone the forked repository.
@@ -88,17 +88,17 @@ If you encounter any performance issues, you can adjust the resource allocation 
 >      Click here for more details!
 >  </summary>
 >  
->  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance when using `catkin build` or other disk-intensive operations. If you encounter this issue, consider using Method 2.
+>  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance when using `catkin (FIXME) build` or other disk-intensive operations. If you encounter this issue, consider using Method 2.
 > </details>
 
 ##### Clone the workspace
 
 ```bash
 # replace the URL with your forked repository if you have forked it
-git clone https://github.com/ETHZ-RobotX/rss_workspace.git  
+git clone https://github.com/ETHZ-RobotX/smb_ros2_workspace.git  
 
 # Open the workspace in VScode. You can also open the folder in VScode manually.
-code rss_workspace 
+code smb_ros2_workspace 
 ```
 
 ##### Reopen workspace in dev container
@@ -106,17 +106,17 @@ Press `Ctrl+Shift+P` or `F1` to open the command palette, type `Reopen in Contai
 
 ### **Method 2**: Clone the workspace to a docker volume and open it in VScode. 
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/rss_workspace)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace)
 
 **TL;DR**: 
-Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/rss_workspace) to open the workspace in a Dev Container. If the link does not work, follow the detailed steps below.
+Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace) to open the workspace in a Dev Container. If the link does not work, follow the detailed steps below.
 
 <details markdown="block">
   <summary>
     Click here for detailed steps!
   </summary>
 
-  1. Copy the following link or the forked repository link to the clipboard `https://github.com/ETHZ-RobotX/rss_workspace.git`.
+  1. Copy the following link or the forked repository link to the clipboard `https://github.com/ETHZ-RobotX/smb_ros2_workspace.git`.
 
   2. Open the Command Palette in VScode by pressing `F1`.
 
@@ -140,28 +140,28 @@ Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vsco
 
 ---
 
-## 🛠️ (Optional) Building the SMB Catkin Workspace
+## 🛠️ (Optional) Building the SMB catkin (FIXME) Workspace
 You can build all packages at once by running
 
 ```bash
-catkin build
+catkin (FIXME) build
 ```
 
 or build a specific package when needed by running
 
 ```bash
-catkin build <package_name>
+catkin (FIXME) build <package_name>
 ```
 
 {: .warning }
-> Be cautious, `catkin build` compiles files in parallel, which may quickly eat up your memory and CPU resource. We provide a shell alias `build-limit` to limit the number of parallel jobs and memory usage defined as follows:
+> Be cautious, `catkin (FIXME) build` compiles files in parallel, which may quickly eat up your memory and CPU resource. We provide a shell alias `build-limit` to limit the number of parallel jobs and memory usage defined as follows:
 >
 > ```bash
-> alias build-limit="catkin build --jobs 8 --mem-limit 70%"
+> alias build-limit="catkin (FIXME) build --jobs 8 --mem-limit 70%"
 > ```
 
 {: .note}
-`build-limit` and `catkin build` can be used interchangeably.
+`build-limit` and `catkin (FIXME) build` can be used interchangeably.
 
 ---
 
@@ -172,7 +172,7 @@ We use `zsh` by default in the integrated terminal. You can set up your shell pr
 
 <img src="{{ 'images/terminal_dropdown.png' | absolute_url }}" alt="Terminal Dropdown" width="100%"/>
 
-Every terminal opened inside VSCode sources the system ROS setup file by default. To source the RSS catkin workspace setup file in newly opened terminals, we provide a shell alias `wssetup` defined as follows:
+Every terminal opened inside VSCode sources the system ROS setup file by default. To source the RSS catkin (FIXME) workspace setup file in newly opened terminals, we provide a shell alias `wssetup` defined as follows:
 
 ```bash
 alias wssetup="source ${ROOT}/devel/setup.zsh"
@@ -220,11 +220,11 @@ This works out of the box in Linux; when a GUI is launched, the window pops up.
 {: .important}
 Works on Linux, Windows, and Mac
 
-1. Modify the [line #20](https://github.com/ETHZ-RobotX/rss_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L20) in the `.devcontainer/devcontainer.json` to
+1. Modify the [line #20](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L20) in the `.devcontainer/devcontainer.json` to
 ```json
 "DISPLAY": ":1"
 ```
-and **optionally** modify the [line #9](https://github.com/ETHZ-RobotX/rss_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L9) in the same file to set the resolution of the VNC viewer.
+and **optionally** modify the [line #9](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L9) in the same file to set the resolution of the VNC viewer.
 
 
 2. Rebuild the workspace by opening the command palette (`Ctrl+Shift+P`) and selecting `Remote-Containers: Rebuild Container`.
@@ -247,8 +247,8 @@ You can try to run the smb gazebo simulation inside the workspace to see if the 
 You can run the following command to start the simulation:
 
 ```bash
-cd /workspaces/rss_workspace
-catkin build smb_gazebo # Build the package if not built
+cd /workspaces/smb_ros2_workspace
+catkin (FIXME) build smb_gazebo # Build the package if not built
 source devel/setup.zsh # Source the workspace setup file if not sourced
 roslaunch smb_gazebo sim.launch
 ```

@@ -22,9 +22,9 @@ nav_exclude: false
 To prepare for the object detection tutorial, please make sure the [SMB software stack](../../installation/index.md) is installed and is running correctly.
 
 ## Prerequisites
-If you are using [rss workspace](../../installation/rss-workspace.md) or [smb docker](../../installation/smb-docker.md), all the necessary dependencies are already installed. If you installed the SMB software stack locally on your machine, please follow the instructions below to install the necessary dependencies.
+If you are using [smb ros2 workspace](../../installation/smb_ros2_workspace.md) or [smb docker](../../installation/smb-docker.md), all the necessary dependencies are already installed. If you installed the SMB software stack locally on your machine, please follow the instructions below to install the necessary dependencies.
 
-### Using rss workspace or smb docker (Recommended)
+### Using smb ros2 workspace or smb docker (Recommended)
 For most users, using the Docker container is the simplest option. The Docker container includes the model and dependencies pre-installed, and the weights are in the correct position. 
 
 - The Docker version does not use PyTorch but runs the model with ONNX to keep the size of the Docker image smaller.
@@ -36,7 +36,7 @@ To install the object detection package locally, follow these steps:
 - Install Python dependencies: `pip install -r requirements.txt`
   - If you are using a conda environment, install the dependencies inside your environment.
     Follow the instructions for installing conda at: [Conda User Guide](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
-- Build object_detection: catkin build object_detection
+- Build object_detection: catkin (FIXME) build object_detection
 - Download the YOLO model weights from [here](https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5l6.pt).
   - After downloading the weights, place them in the `/usr/share/yolo/models` folder
 
@@ -61,7 +61,7 @@ These rosbags and yaml files will be used during the tutorial. Please download t
 
 ---
 
-## Running the ROS Bag File in Docker (Only for rss_workspace and smb_docker)
+## Running the ROS Bag File in Docker (Only for smb_ros2_workspace and smb_docker)
 
 ### Copying the ROS Bag File into the Docker Container
 
@@ -73,10 +73,10 @@ If you have downloaded the ROS bag files to your local machine and are using Mac
    docker ps
    ```
 
-   The output will look like this if you are using the rss_workspace:
+   The output will look like this if you are using the smb_ros2_workspace:
    ```
    CONTAINER ID   IMAGE                            COMMAND       CREATED         STATUS         NAMES
-   1234567890ab   vsc-rss_workspace-123asd-uid     "/bin/bash"   5 minutes ago   Up 5 minutes   sad_hawking
+   1234567890ab   vsc-smb_ros2_workspace-123asd-uid     "/bin/bash"   5 minutes ago   Up 5 minutes   sad_hawking
    ```
    
    or like this if you are using the smb_docker:
@@ -90,7 +90,7 @@ If you have downloaded the ROS bag files to your local machine and are using Mac
 2. Copy the ROS bag file into the Docker container, replacing `<NAME-OF-CONTAINER>` with the actual name of the Docker container and `/path/to/your/rosbag.bag` with the path to the ROS bag file on your local machine:
 
    ```bash
-   docker cp /path/to/your/rosbag.bag <NAME-OF-CONTAINER>:/workspaces/rss_workspace/src/path_to_bag_storage 
+   docker cp /path/to/your/rosbag.bag <NAME-OF-CONTAINER>:/workspaces/smb_ros2_workspace/src/path_to_bag_storage 
    ```
 
    {: .note}
@@ -99,7 +99,7 @@ If you have downloaded the ROS bag files to your local machine and are using Mac
 3. Navigate to the directory containing the ROS bag file inside the container:
 
    ```bash
-   cd /workspaces/rss_workspace/src/rosbags
+   cd /workspaces/smb_ros2_workspace/src/rosbags
    ```
 
 4. Play the ROS bag file:

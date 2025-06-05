@@ -9,7 +9,7 @@ has_toc: false
 # 🖥️ Local Installation
 {:.no_toc}
 
-Please [create an issue](https://github.com/ETHZ-RobotX/SuperMegaBot/issues/new) for any missing library, package, driver, error, or any kind of unclear instruction.
+Please [create an issue](https://github.com/ETHZ-RobotX/RoboticsSummerSchool/issues/new) for any missing library, package, driver, error, or any kind of unclear instruction.
 {: .important }
 
 * Table of contents
@@ -19,21 +19,21 @@ Please [create an issue](https://github.com/ETHZ-RobotX/SuperMegaBot/issues/new)
 {:.no_toc}
 
 The SMB software is split into two parts: non-hardware and hardware related. 
-If you want to use the system on a real SMB robot with real sensors and actuators, the [hardware-related part](../../physical-robot/setting-up/robot-workspace-setup.md) should be installed **on top of the non-hardware part**. This document contains the instructions for SMB non-hardware related software, which also includes the simulation environment.
+If you want to use the system on a real SMB robot with real sensors and actuators, the [hardware-related part](../physical-robot/setting-up/robot-workspace-setup.md) should be installed **on top of the non-hardware part**. This document contains the instructions for SMB non-hardware related software, which also includes the simulation environment.
 
 ## 📋 Prerequisites
 
-Note that the system has been developed on Ubuntu 20.04 and tested with [ROS Noetic](http://wiki.ros.org/noetic). Also works if you have a virtual environment with Ubuntu 20.04.
+Note that the system has been developed on Ubuntu 20.04 and tested with [ROS Noetic FIXME](http://wiki.ros.org/noetic FIXME). Also works if you have a virtual environment with Ubuntu 20.04.
 {: .note }
 
 * To check if the system has the correct ROS distribution, please use the following terminal command:
 
     ```bash
     echo $ROS_DISTRO
-    # output: noetic
+    # output: noetic FIXME
     ```
 
-* If you do not see the correct output, please refer to the [official ROS website](http://wiki.ros.org/noetic/Installation/Ubuntu) to install **ROS Noetic Desktop**.
+* If you do not see the correct output, please refer to the [official ROS website](http://wiki.ros.org/noetic FIXME/Installation/Ubuntu) to install **ROS Noetic FIXME Desktop**.
 
     After installation, please ensure that environment variables like ROS_ROOT and ROS_PACKAGE_PATH are set. Verify the installation by running the following terminal command:
 
@@ -45,44 +45,44 @@ Note that the system has been developed on Ubuntu 20.04 and tested with [ROS Noe
 
 ### Installing Command-Line Tools
 
-> This section contains scripts to download tools for catkin, dependencies, and repository management.
+> This section contains scripts to download tools for catkin (FIXME), dependencies, and repository management.
 
 ```bash
 # Tool for repo management
 sudo apt install python3-vcstool
-# Tool for catkin packages
-sudo apt install python3-catkin-tools python3-catkin-lint python3-pip
+# Tool for catkin (FIXME) packages
+sudo apt install python3-catkin (FIXME)-tools python3-catkin (FIXME)-lint python3-pip
 # Tool for installing dependencies
 sudo apt install python3-rosdep
 # Miscellaneous libraries/tools
 python3 -m pip install osrf-pycommon
 ```
 
-### Creating catkin workspace
+### Creating catkin (FIXME) workspace
 
-Create a new catkin workspace.
+Create a new catkin (FIXME) workspace.
 
 ```bash
 # create the directories
 # Do not forget to change <...> parts
-mkdir -p <directory_to_ws>/<catkin_ws_name>/src
-cd <directory_to_ws>/<catkin_ws_name>/
+mkdir -p <directory_to_ws>/<catkin (FIXME)_ws_name>/src
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/
 
-# initilize the catkin workspace
-catkin init
-catkin config --extend /opt/ros/noetic
-catkin config -DCMAKE_BUILD_TYPE=Release
+# initilize the catkin (FIXME) workspace
+catkin (FIXME) init
+catkin (FIXME) config --extend /opt/ros/noetic FIXME
+catkin (FIXME) config -DCMAKE_BUILD_TYPE=Release
 ```
 
 * example
 
     ```bash
-    # Example directory to ws and catkin workspace name
+    # Example directory to ws and catkin (FIXME) workspace name
     mkdir -p ~/smb_ws/src
     cd ~/smb_ws/
-    catkin init
-    catkin config --extend /opt/ros/noetic
-    catkin config -DCMAKE_BUILD_TYPE=Release
+    catkin (FIXME) init
+    catkin (FIXME) config --extend /opt/ros/noetic FIXME
+    catkin (FIXME) config -DCMAKE_BUILD_TYPE=Release
     ```
 
 ### Downloading the SMB packages with vcstool
@@ -93,13 +93,13 @@ To download the SMB packages, the vcs command-line tools will be used. For more 
 To download the SMB packages by using vcs tool run the following terminal commands in order.
 
 ```bash
-# Navigate to the directory of src in your <catkin_ws_name>
-cd <directory_to_ws>/<catkin_ws_name>/src
+# Navigate to the directory of src in your <catkin (FIXME)_ws_name>
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/src
 
 # Download the packages
 vcs import \
 --recursive \
---input https://raw.githubusercontent.com/ETHZ-RobotX/SuperMegaBot/master/smb.repos .
+--input https://raw.githubusercontent.com/ETHZ-RobotX/RoboticsSummerSchool/master/smb.repos .
 ```
 
 ### Installing dependencies with rosdep
@@ -118,8 +118,8 @@ To install the dependencies, rosdep package will be used.For more information ab
 * To download the SMB dependencies by using rosdep package run the following terminal commands in order.
 
     ```bash
-    # Navigate to the directory of src in your <catkin_ws_name>
-    cd <directory_to_ws>/<catkin_ws_name>/src
+    # Navigate to the directory of src in your <catkin (FIXME)_ws_name>
+    cd <directory_to_ws>/<catkin (FIXME)_ws_name>/src
 
     # Magic of rosdep
     rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
@@ -129,11 +129,11 @@ To install the dependencies, rosdep package will be used.For more information ab
 
 * Note that, rosdep might not be able to install all dependencies. Please check the message at the terminal.
 
-    Example : ros-noetic-gazebo-plugins
+    Example : ros-noetic FIXME-gazebo-plugins
 
     ```bash
     # Install example missing package even after resdep
-    sudo apt install ros-noetic-gazebo-plugins
+    sudo apt install ros-noetic FIXME-gazebo-plugins
     ```
     {: .note }
 
@@ -160,13 +160,13 @@ conda install -c conda-forge empy defusedxml rospkg numpy -y
 After all required SMB packages and dependencies are cloned and installed, you can build the project:
 ```bash
 # Navigate to the directory of workspace
-cd <directory_to_ws>/<catkin_ws_name>/
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/
 
 # Build it
-catkin build smb_gazebo
+catkin (FIXME) build smb_gazebo
 
 # Source it
-source <directory_to_ws>/<catkin_ws_name>/devel/setup.bash
+source <directory_to_ws>/<catkin (FIXME)_ws_name>/devel/setup.bash
 ```
 
 You should see that every package is succesfully built.
@@ -174,7 +174,7 @@ After you built the packages, you can add the source file into **~/.bashrc** so 
 
 ```bash
 # Do not forget to change <...> parts
-echo "source <directory_to_ws>/<catkin_ws_name>/devel/setup.bash" >> ~/.bashrc
+echo "source <directory_to_ws>/<catkin (FIXME)_ws_name>/devel/setup.bash" >> ~/.bashrc
 ```
 
 ## ▶️ Running the simulation
@@ -253,10 +253,10 @@ The repositories containing the SMB Core software will most likely be updated. I
 To download the most recent software, execute the following commands.
 ```bash
 # Do not forget to change <...> parts
-cd <directory_to_ws>/<catkin_ws_name>/src
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/src
 
 # Add the new repositories
-vcs import --recursive --input https://raw.githubusercontent.com/ETHZ-RobotX/SuperMegaBot/master/smb.repos .
+vcs import --recursive --input https://raw.githubusercontent.com/ETHZ-RobotX/RoboticsSummerSchool/master/smb.repos .
 
 # Pull the latest changes
 vcs pull
@@ -286,13 +286,13 @@ This means that the repository on your host is outdated and the URL of the new o
 
 ```bash
 # Do not forget to change <...> parts
-cd <directory_to_ws>/<catkin_ws_name>/src
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/src
 
 # Delete outdated repository
 rm -rf <outdated_repository>
 
 # Add the new repositories
-vcs import --recursive --input https://raw.githubusercontent.com/ETHZ-RobotX/SuperMegaBot/master/smb.repos .
+vcs import --recursive --input https://raw.githubusercontent.com/ETHZ-RobotX/RoboticsSummerSchool/master/smb.repos .
 
 # Pull the latest changes
 vcs pull
@@ -308,11 +308,11 @@ CMake Error: The source directory "/path/to/directory" does not exist.
 In this case just clean the your builds and build again.
 ```bash
 # Do not forget to change <...> parts
-cd <directory_to_ws>/<catkin_ws_name>/
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/
 
 # Clean
-catkin clean <package_name>
+catkin (FIXME) clean <package_name>
 
 # Build
-catkin build <package_name>
+catkin (FIXME) build <package_name>
 ```

@@ -11,9 +11,9 @@ nav_exclude: false
 
 To prepare for the Tutorial on Trajectory Optimization, only the [OCS2](https://leggedrobotics.github.io/ocs2/overview.html) toolbox must be set up. We provide the required packages in `lib/ocs2`. The only packages we will be using are `ocs2_legged_robot_ros` and `ocs2_legged_robot`, which contain all the code to run the tutorial.
 
-You can already build the current state of the `ocs2_legged_robot_ros` package. In the catkin workspace, run:
+You can already build the current state of the `ocs2_legged_robot_ros` package. In the catkin (FIXME) workspace, run:
 ```bash
-catkin build ocs2_legged_robot_ros
+catkin (FIXME) build ocs2_legged_robot_ros
 ```
 
 The package is not operational in its current state, though, as it is missing some code that will be completed by you during the tutorial.
@@ -22,11 +22,11 @@ N.B. If the build fails on a Mac, add the CMake flag
 ```bash
 set(TARGET GENERIC CACHE STRING "Set CPU architecture target" FORCE)
 ```
-inside `lib/ocs2/ocs2_sqp/hpipm_catkin/CMakeLists.txt`.
+inside `lib/ocs2/ocs2_sqp/hpipm_catkin (FIXME)/CMakeLists.txt`.
 
 ## 🔧 Check Software Installation
 
-After building the package, you can try to launch the node by running the following command in the catkin workspace:
+After building the package, you can try to launch the node by running the following command in the catkin (FIXME) workspace:
 ```bash
 roslaunch ocs2_legged_robot_ros legged_robot_ddp.launch
 ```

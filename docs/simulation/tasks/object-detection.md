@@ -12,7 +12,7 @@ Once the planner is set up and the SMB simulation is running, you can begin expe
 
 ```bash
 # On the host PC
-catkin build object_detection   
+catkin (FIXME) build object_detection   
 ```
 
 Source the workspace again and launch the SMB launch file.

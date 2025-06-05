@@ -15,11 +15,11 @@ The official documentation can be found in the [open3d_slam_advanced_rss_2024_pu
 
 ## 🔧 Setting-up
 
-The tutorial material can be run if you have successfully followed the [installation steps](../../installation/index.md). Using [RSS Workspace](../../installation/rss-workspace.md) is recommended.
+The tutorial material can be run if you have successfully followed the [installation steps](../../installation/index.md). Using [SMB ROS2 Workspace](../../installation/smb_ros2_workspace.md) is recommended.
 
 ```bash
 # build smb_slam
-catkin build -c smb_msf_graph smb_slam
+catkin (FIXME) build -c smb_msf_graph smb_slam
 ```
 You have installed the important bits everything correctly if building ```smb_slam``` doesn't throw any error.
 
@@ -86,7 +86,7 @@ Furthermore, we need to put this rosbag as `/open3d_slam_advanced_rss_2024_publi
 roscd open3d_slam_ros && cd data
 ```
 
-#### Using RSS Workspace/ SMB Docker?
+#### Using SMB ROS2 Workspace/ SMB Docker?
 
 If you have downloaded the ROS bag files to your local machine and are using Mac or Windows, you can copy them into the Docker container using the docker cp command. Ensure the Docker container is running before performing these steps:
 
@@ -96,10 +96,10 @@ If you have downloaded the ROS bag files to your local machine and are using Mac
    docker ps
    ```
 
-   The output will look like this if you are using the rss_workspace:
+   The output will look like this if you are using the smb_ros2_workspace:
    ```
    CONTAINER ID   IMAGE                            COMMAND       CREATED         STATUS         NAMES
-   1234567890ab   vsc-rss_workspace-123asd-uid     "/bin/bash"   5 minutes ago   Up 5 minutes   sad_hawking
+   1234567890ab   vsc-smb_ros2_workspace-123asd-uid     "/bin/bash"   5 minutes ago   Up 5 minutes   sad_hawking
    ```
    
    or like this if you are using the smb_docker:
@@ -114,7 +114,7 @@ If you have downloaded the ROS bag files to your local machine and are using Mac
 
    ```bash
    # copy the bag file from local storage to the docker container
-   docker cp /path/to/your/tutorial.bag <NAME-OF-CONTAINER>:/workspaces/rss_workspace/src/slam/open3d_slam/open3d_slam_rsl/ros/open3d_slam_ros/data/
+   docker cp /path/to/your/tutorial.bag <NAME-OF-CONTAINER>:/workspaces/smb_ros2_workspace/src/slam/open3d_slam/open3d_slam_rsl/ros/open3d_slam_ros/data/
    ```
 
    {: .note}
@@ -201,7 +201,7 @@ Check the open3d version (it should be 0.16)
 
 ### Open3d_slam install (cpp package, required for online SLAM and Localization)
 
-Make sure that you have installed the repositories following the instructions [here](https://ethz-robotx.github.io/SuperMegaBot/core-software/installation_core.html
+Make sure that you have installed the repositories following the instructions [here](https://ethz-robotx.github.io/RoboticsSummerSchool/core-software/installation_core.html
 ) for core SMB software since we will be running online SLAM in Gazebo simulation.  
 
 Some additional dependencies are required for Open3d_slam for which you can follow these steps:
@@ -209,16 +209,16 @@ Some additional dependencies are required for Open3d_slam for which you can foll
 ```bash
 sudo apt install libgoogle-glog-dev
 sudo apt install libglfw3 libglfw3-dev
-sudo apt install ros-noetic-jsk-rviz-plugins
+sudo apt install ros-noetic FIXME-jsk-rviz-plugins
 sudo apt install liblua5.2-dev
 sudo add-apt-repository ppa:roehling/open3d
 sudo apt update
 sudo apt install libopen3d-dev
 ```
 
-You can now go to your rss workspace and directly build the package smb_gazebo and smb_slam by running the following command:
+You can now go to your smb ros2 workspace and directly build the package smb_gazebo and smb_slam by running the following command:
 
 ```bash
 cd smb_ws # PATH TO YOUR WORKSPACE
-catkin build smb_gazebo smb_slam
+catkin (FIXME) build smb_gazebo smb_slam
 ``` -->

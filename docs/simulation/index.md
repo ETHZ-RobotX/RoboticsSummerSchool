@@ -9,7 +9,7 @@ has_toc: false
 # 🖥️ Simulation
 
 {: .important }
-Please [create an issue](https://github.com/ETHZ-RobotX/SuperMegaBot/issues/new) for any missing library, package, driver, error, or any kind of unclear instruction.
+Please [create an issue](https://github.com/ETHZ-RobotX/RoboticsSummerSchool/issues/new) for any missing library, package, driver, error, or any kind of unclear instruction.
 
 ## 💡 Remarks
 

@@ -17,7 +17,7 @@ Make sure that the `smb_exploration` is built. If not, run:
 
 ```bash
 # In the host PC
-catkin build smb_exploration
+catkin (FIXME) build smb_exploration
 ```
 
 ## 🧭 Lower Level Planner

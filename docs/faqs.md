@@ -9,7 +9,7 @@ nav_order: 6
 
 This page covers the most frequently asked questions that arise when using the SMB simulation and working on the real robot.
 
-For recent and past queries, please refer to the [GitHub Issues](https://github.com/ETHZ-RobotX/SuperMegaBot/issues) of this repository.
+For recent and past queries, please refer to the [GitHub Issues](https://github.com/ETHZ-RobotX/RoboticsSummerSchool/issues) of this repository.
 
 * Table of contents
 {:toc}

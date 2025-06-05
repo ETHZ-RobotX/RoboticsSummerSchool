@@ -10,7 +10,7 @@ has_toc: false
 
 There are several ways to set up the SMB software stack on your personal computer:
 
-1. **🚀 [RSS Workspace](rss-workspace.md)** *(Recommended)*
+1. **🚀 [SMB ROS2 Workspace](smb_ros2_workspace.md)** *(Recommended)*
 - Based on VSCode Dev Container (VSCode + Docker + Dev Container extension)
 - The **smoothest** way to set up with pre-defined aliases and productivity tools.
 

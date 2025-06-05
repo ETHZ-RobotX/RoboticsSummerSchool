@@ -19,7 +19,7 @@ Make sure that the `smb_navigation` is built. If not, run:
 
 ```bash
 # In the host PC
-catkin build smb_path_planner
+catkin (FIXME) build smb_path_planner
 ```
 
 ## ⚡ Quick Test
@@ -100,7 +100,7 @@ Launch the Gazebo + RViz:
 
 ```bash
 # in the first terminal 
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_gazebo sim.launch tracking_camera:=true launch_gazebo_gui:=true world:=planner_tutorial
 ```
 
@@ -108,7 +108,7 @@ Launch OMPL planner:
 
 ```bash
 # In the second terminal 
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_navigation navigate2d_ompl.launch sim:=true global_frame:=tracking_camera_odom
 
 # If you see the message "odom received",
@@ -122,7 +122,7 @@ Launch the Gazebo + RViz:
 
 ```bash
 # in the first terminal
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true world:=planner_tutorial
 ```
 
@@ -130,7 +130,7 @@ Launch MSF Graph + Open3D SLAM:
 
 ```bash
 # in the second terminal - launch the state estimator with online SLAM
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_msf_graph smb_msf_graph.launch use_sim_time:=true
 ```
 
@@ -140,7 +140,7 @@ Launch OMPL planner:
 
 ```bash
 # in the third terminal - launch the autonomous navigation
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_navigation navigate2d_ompl.launch sim:=true global_frame:=world_graph_msf odom_topic:=/graph_msf/est_odometry_odom_imu
 
 # If you see the message "odom received",
@@ -151,7 +151,7 @@ roslaunch smb_navigation navigate2d_ompl.launch sim:=true global_frame:=world_gr
 To save the map, use the following ROS service:
 
 ```bash
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 rosservice call /mapping/save_map
 ```
 
@@ -166,7 +166,7 @@ Launch the Gazebo + RViz:
 
 ```bash
 # in the first terminal
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true world:=planner_tutorial
 ```
 
@@ -174,7 +174,7 @@ In the next step, the state estimator needs to be launched:
 
 ```bash
 # in the second terminal - launch the state estimator with online SLAM
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 # this will automatically fetch the map saved in smb_slam/data/maps/map.pcd which can be configured in param_rs16_localization.lua
 roslaunch smb_slam localization.launch use_sim_time:=true
 ```
@@ -183,13 +183,13 @@ Make the fixed frame `map_o3d`. Before running anything else, you need to first 
 
 ```bash
 # in the third terminal - launch the state estimator
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_msf_graph smb_msf_graph.launch launch_o3d_slam:=false use_sim_time:=true
 ```
 
 ```bash
 # in the fourth terminal - launch the autonomous navigation
-# source the workspace (wssetup in rss workspace)
+# source the workspace (wssetup in smb ros2 workspace)
 roslaunch smb_navigation navigate2d_ompl.launch sim:=true global_frame:=world_graph_msf odom_topic:=/graph_msf/est_odometry_odom_imu
 
 # If you see the message "odom received",

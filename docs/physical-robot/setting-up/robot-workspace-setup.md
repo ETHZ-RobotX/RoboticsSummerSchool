@@ -31,7 +31,7 @@ The USB rules for the motor controller driver should be copied to rules.d .
 ```bash
 # Copy the USB rule
 # Dont forget to change <>
-sudo cp <catkin_ws_dir>/src/smb_common/smb_lowlevel_controller/smb_driver/udev/55-smb.rules /etc/udev/rules.d/
+sudo cp <catkin (FIXME)_ws_dir>/src/smb_common/smb_lowlevel_controller/smb_driver/udev/55-smb.rules /etc/udev/rules.d/
 ```
 
 ### RealSense 
@@ -44,7 +44,7 @@ sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(ls
 sudo apt update
 sudo apt install librealsense2-dev librealsense2-dkms librealsense2-utils
 
-sudo apt install ros-noetic-ddynamic-reconfigure
+sudo apt install ros-noetic FIXME-ddynamic-reconfigure
 ```
 
 ### Robosense
@@ -57,7 +57,7 @@ sudo apt-get install -y libyaml-cpp-dev libpcap-dev libprotobuf-dev protobuf-com
 Download [the spinnaker driver](https://drive.google.com/file/d/1wVK0dAH4mre1Prsr-Wsaowz0_OAmWe2f/view?usp=sharing).
 ```bash
 # Installing necessary libraries for camera driver.
-sudo apt install ros-noetic-roslint
+sudo apt install ros-noetic FIXME-roslint
 
 cd <Directory_to_download>/
 
@@ -95,10 +95,10 @@ To clone the HW related repositories by using the vcs tool run the following ter
 ```bash
 # Navigate to the directory of src
 # Do not forget to change <...> parts
-cd <directory_to_ws>/<catkin_ws_name>/src
+cd <directory_to_ws>/<catkin (FIXME)_ws_name>/src
 
 # Download the packages
-vcs import --recursive --input https://raw.githubusercontent.com/ETHZ-RobotX/SuperMegaBot/master/smb_hw.repos .
+vcs import --recursive --input https://raw.githubusercontent.com/ETHZ-RobotX/RoboticsSummerSchool/master/smb_hw.repos .
 
 # Magic of rosdep
 # Install dependencies
@@ -109,24 +109,24 @@ rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
 #### Versavis 
 ```bash
 # Installing necessary libraries for Versavis.
-cd <directory_to_catkin_ws>/src/versavis
+cd <directory_to_catkin (FIXME)_ws>/src/versavis
 git submodule update --init
 
 ## dependency of rosserial
 sudo apt install python3-serial
 
 ## install udev rules for versavis
-sudo cp <directory_to_catkin_ws>/src/versavis/firmware/98-versa-vis.rules /etc/udev/rules.d/
+sudo cp <directory_to_catkin (FIXME)_ws>/src/versavis/firmware/98-versa-vis.rules /etc/udev/rules.d/
 sudo udevadm control --reload
 ```
 
 After every installation to build the packages
 ```bash
 # Build it
-catkin build smb
+catkin (FIXME) build smb
 
 # Source it
-source <directory_to_ws>/<catkin_ws_name>/devel/setup.bash
+source <directory_to_ws>/<catkin (FIXME)_ws_name>/devel/setup.bash
 ```
 
 ## Simplify access to SMB

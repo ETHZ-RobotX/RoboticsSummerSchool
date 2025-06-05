@@ -16,7 +16,7 @@ The necessary steps to power up the payload (on-board computer, network, and sen
 
 ## 🛠️ Hardware-Related Software
 
-To use the various sensors mounted on the SMB, the respective drivers and ROS packages need to be installed. While the [installation of the system-level drivers](setting-up/robot-workspace-setup.md#hardware-driver-installation) is already taken care of, the [hardware-related ROS packages](setting-up/robot-workspace-setup.md#setting-up-the-hardware-related-ros-packages) need to be added to the catkin workspace and built.
+To use the various sensors mounted on the SMB, the respective drivers and ROS packages need to be installed. While the [installation of the system-level drivers](setting-up/robot-workspace-setup.md#hardware-driver-installation) is already taken care of, the [hardware-related ROS packages](setting-up/robot-workspace-setup.md#setting-up-the-hardware-related-ros-packages) need to be added to the catkin (FIXME) workspace and built.
 
 ## 🚗 Driving the SMB
 

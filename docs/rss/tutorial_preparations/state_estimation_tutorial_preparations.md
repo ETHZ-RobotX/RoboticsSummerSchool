@@ -29,23 +29,23 @@ Download the rosbag(s) into a folder of your choice. In the tutorial this locati
 
 ---
 
-## Compile gtsam_catkin
+## Compile gtsam_catkin (FIXME)
 
 To compile the required packages, simply run
 ```bash
-catkin build gtsam_catkin
+catkin (FIXME) build gtsam_catkin (FIXME)
 ```
 This will build gtsam in you workspace and could take up to 5 minutes depending on your CPU.
 
 {: .note}
-The very first build of `gtsam_catkin` usually takes longer than subsequent build. Even after cleaning the build result with `catkin clean`, it will still be much faster, as the compiled binaries are preserved in the `lib/gtsam_catkin` folder in the source space.
+The very first build of `gtsam_catkin (FIXME)` usually takes longer than subsequent build. Even after cleaning the build result with `catkin (FIXME) clean`, it will still be much faster, as the compiled binaries are preserved in the `lib/gtsam_catkin (FIXME)` folder in the source space.
 
 ---
 
 ## Build smb_msf_graph
 To build `smb_msf_graph` run
 ```bash
-catkin build smb_msf_graph
+catkin (FIXME) build smb_msf_graph
 ```
 This will compile all dependencies present in the workspace, including open3d_slam.
 
@@ -55,18 +55,18 @@ This will compile all dependencies present in the workspace, including open3d_sl
 You can test the success of the compilation by running the following code (from the root directory of the workspace).
 
 ```bash
-source devel/setup.bash    # or `wssetup` if you are using rss_workspace
+source devel/setup.bash    # or `wssetup` if you are using smb_ros2_workspace
 roslaunch smb_msf_graph smb_msf_graph.launch
 ```
 If everything launches without any error messages, your C++ software is ready for the tutorial.
 
 ---
 
-## Running the ROS Bag File in Docker (Only for rss_workspace and smb_docker)
+## Running the ROS Bag File in Docker (Only for smb_ros2_workspace and smb_docker)
 
 ### Copying the ROS Bag File into the Docker Container
 
-If you use `rss_workspace` and `smb_docker`, you can copy them into the Docker container using the docker cp command. Ensure the Docker container is running before performing these steps:
+If you use `smb_ros2_workspace` and `smb_docker`, you can copy them into the Docker container using the docker cp command. Ensure the Docker container is running before performing these steps:
 
 1. Find the name of the Docker container by running the following command (make sure your Docker container is running)
 
@@ -74,10 +74,10 @@ If you use `rss_workspace` and `smb_docker`, you can copy them into the Docker c
    docker ps
    ```
 
-   The output will look like this if you are using the rss_workspace:
+   The output will look like this if you are using the smb_ros2_workspace:
    ```
    CONTAINER ID   IMAGE                            COMMAND       CREATED         STATUS         NAMES
-   1234567890ab   vsc-rss_workspace-123asd-uid     "/bin/bash"   5 minutes ago   Up 5 minutes   sad_hawking
+   1234567890ab   vsc-smb_ros2_workspace-123asd-uid     "/bin/bash"   5 minutes ago   Up 5 minutes   sad_hawking
    ```
    
    or like this if you are using the smb_docker:
@@ -91,7 +91,7 @@ If you use `rss_workspace` and `smb_docker`, you can copy them into the Docker c
 2. Copy the ROS bag file into the Docker container, replacing `<NAME-OF-CONTAINER>` with the actual name of the Docker container and `/path/to/your/rosbag.bag` with the path to the ROS bag file on your local machine:
 
    ```bash
-   docker cp /path/to/your/rosbag.bag <NAME-OF-CONTAINER>:/workspaces/rss_workspace/src/rosbags/
+   docker cp /path/to/your/rosbag.bag <NAME-OF-CONTAINER>:/workspaces/smb_ros2_workspace/src/rosbags/
    ```
 
    {: .note}
@@ -100,7 +100,7 @@ If you use `rss_workspace` and `smb_docker`, you can copy them into the Docker c
 3. Navigate to the directory containing the ROS bag file inside the container:
 
    ```bash
-   cd /workspaces/rss_workspace/src/rosbags
+   cd /workspaces/smb_ros2_workspace/src/rosbags
    ```
 
 4. Play the ROS bag file:
@@ -130,12 +130,12 @@ sudo apt-get install terminator
 ```
 
 {: .note}
-If you are using [rss_workspace](../../installation/rss-workspace.md), jsk_rviz_plugins is already installed.
+If you are using [smb_ros2_workspace](../../installation/smb_ros2_workspace.md), jsk_rviz_plugins is already installed.
 
 * jsk_rviz_plugins, for visualizing TF-paths in RVIZ.
 
 
 ```bash
-sudo apt-get install ros-noetic-jsk-rviz-plugins
+sudo apt-get install ros-noetic FIXME-jsk-rviz-plugins
 ```
 

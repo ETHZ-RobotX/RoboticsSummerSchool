@@ -17,7 +17,7 @@ First of all, make sure the `smb_gazebo` has been already built successfully.
 
 ```bash
 # In the host pc, build the smb_gazebo package if you haven't already
-catkin build smb_gazebo
+catkin (FIXME) build smb_gazebo
 ```
 
 ## 👀 Visualisation
@@ -68,5 +68,5 @@ Now you have two possibilities to drive with the robot.
     roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true
     ```
 
-    The joystick mode might not work properly if you are using the **RSS Workspace** or **SMB Docker** image on Windows and MacOS environments.
+    The joystick mode might not work properly if you are using the **SMB ROS2 Workspace** or **SMB Docker** image on Windows and MacOS environments.
     {: .warning }

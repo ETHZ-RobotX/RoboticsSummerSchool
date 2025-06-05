@@ -32,7 +32,7 @@ The SMB robot is equipped with LiDAR and IMU. For state estimation, these data c
 To build MSF Graph, 
 
 ```bash
-catkin build -c smb_msf_graph
+catkin (FIXME) build -c smb_msf_graph
 ```
 
 To run the MSF Graph,

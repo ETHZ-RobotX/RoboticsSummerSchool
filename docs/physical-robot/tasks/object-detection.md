@@ -13,7 +13,7 @@ Once the planner is set up and the real SMB is running, you can begin experiment
 
 ```bash
 # On the SMB
-catkin build object_detection   
+catkin (FIXME) build object_detection   
 ```
 
 Source the workspace again and launch the SMB launch file.
