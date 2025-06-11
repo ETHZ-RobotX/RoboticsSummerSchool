@@ -61,6 +61,7 @@ python3 -m pip install osrf-pycommon
 ### Creating catkin (FIXME) workspace
 
 Create a new catkin (FIXME) workspace.
+FIXME: clone workspace
 
 ```bash
 # create the directories

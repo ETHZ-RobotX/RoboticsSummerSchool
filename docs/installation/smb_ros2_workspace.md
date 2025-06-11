@@ -26,10 +26,11 @@ The **smb_ros2_workspace** is a all-in-one development environment for the Super
 
 Under the hood, the workspace uses [Docker](https://www.docker.com/) and [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers) to provide a consistent development environment across different platforms.
 
-This has been tested on the following platforms: FIXME
-- ✅ Ubuntu 22.04/20.04 AMD64
-- ✅ Windows 11 AMD64
-- ✅ MacOS Sonoma AMD64 and ARM64 (Apple Silicon)
+This has been tested on the following platforms FIXME: 
+
+- ✅ Ubuntu 22.04/❌20.04 AMD64
+- ❌ Windows FIXME to test
+- ❌ MacOS Sonoma AMD64 and ARM64 (Apple Silicon)
 
 For other Linux distros, the steps should be similar to Ubuntu and work for both AMD64 and ARM64 architectures. For Windows 10, the steps should be similar to Windows 11. The same applies to different versions of MacOS.
 
@@ -64,12 +65,12 @@ If you encounter any performance issues, you can adjust the resource allocation 
 - Ensure you have a working VSCode setup and that it is up to date to avoid any issues.
 - Install the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in VSCode.
 
-### **(Optional)** Install Real VNC Viewer
+### **(Optional)** FIXME Install Real VNC Viewer
 - Required if you want to run GUI application with VNC. 
 - Install Real VNC Viewer by following [the official website](https://www.realvnc.com/en/connect/download/viewer)
 
 ### **(Optional)** SSH-agent
-- To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent. See the **preparation step 2** [here](https://github.com/ETHZ-RobotX/smb_ros2_workspace#preparation) for more details.
+- To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent. See the **preparation step 2** [here](https://github.com/ETHZ-RobotX/smb_ros2_workspace#preparation FIXME) for more details.
 
 ### **(Optional)** Fork the repository
 - If you want to customize your workspace and save your changes, you can fork the repository to your GitHub account and clone the forked repository.
@@ -91,25 +92,31 @@ If you encounter any performance issues, you can adjust the resource allocation 
 >  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance when using `catkin (FIXME) build` or other disk-intensive operations. If you encounter this issue, consider using Method 2.
 > </details>
 
-##### Clone the workspace
+##### 1) Clone the workspace
 
 ```bash
-# replace the URL with your forked repository if you have forked it
+# Replace the URL with your forked repository if you have forked it
 git clone https://github.com/ETHZ-RobotX/smb_ros2_workspace.git  
 
 # Open the workspace in VScode. You can also open the folder in VScode manually.
 code smb_ros2_workspace 
 ```
 
-##### Reopen workspace in dev container
+##### 2) Build the Docker image:
+```bash
+# Build the docker image using our Dockerfile
+docker build --file .github/docker/Dockerfile --tag smb_ros2_workspace:main .
+```
+
+##### 3) Reopen workspace in dev container
 Press `Ctrl+Shift+P` or `F1` to open the command palette, type `Reopen in Container` and select the command to reopen the workspace in a Dev Container.
 
-### **Method 2**: Clone the workspace to a docker volume and open it in VScode. 
+### **Method 2**: Clone the workspace to a docker volume and open it in VScode FIXME. 
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace)
+[![Open in Dev Containers FIXME](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace)
 
 **TL;DR**: 
-Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace) to open the workspace in a Dev Container. If the link does not work, follow the detailed steps below.
+Click the badge above or [here FIXME](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspaceFIXME) to open the workspace in a Dev Container. If the link does not work, follow the detailed steps below.
 
 <details markdown="block">
   <summary>
@@ -140,34 +147,39 @@ Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vsco
 
 ---
 
-## 🛠️ (Optional) Building the SMB catkin (FIXME) Workspace
-You can build all packages at once by running
+## 🛠️ Building the SMB Workspace
 
+##### 1) Source the workspace
 ```bash
-catkin (FIXME) build
+source ~/.bashrc
+```
+ 
+##### 2) Install (Pull) the packges
+```bash
+gitman install
 ```
 
-or build a specific package when needed by running
-
+##### 3) Build the packages
+Build all the relevant packages:
 ```bash
-catkin (FIXME) build <package_name>
+smb_build_packages_up_to meta_smb_sim
 ```
+
+or build a specific package when needed by running:
+```bash
+smb_build_packages_up_to <package_name>
+```
+
+**Note**: If you are building packages on the real SMB robot, run `smb_build_packages_up_to meta_smb_nuc` or `smb_build_packages_up_to meta_smb_jetson`, depending if you are connected to the NUC or the Jetson.
 
 {: .warning }
-> Be cautious, `catkin (FIXME) build` compiles files in parallel, which may quickly eat up your memory and CPU resource. We provide a shell alias `build-limit` to limit the number of parallel jobs and memory usage defined as follows:
->
-> ```bash
-> alias build-limit="catkin (FIXME) build --jobs 8 --mem-limit 70%"
-> ```
-
-{: .note}
-`build-limit` and `catkin (FIXME) build` can be used interchangeably.
+> Be cautious, since the default biulding compiles files in parallel, which may quickly eat up your memory and CPU resource. If you encounter resource problems with your machine, add this flag after the building command: `--executor sequential`. For example, `smb_build_packages_up_to meta_smb_sim --executor sequential` .
 
 ---
 
 ## 🖥️ Using the Terminal
 
-### Integrated Terminal
+### Integrated Terminal (FIXME)
 We use `zsh` by default in the integrated terminal. You can set up your shell preferences in `.vscode/settings.json` or click the dropdown button in the terminal to select the default shell profile.
 
 <img src="{{ 'images/terminal_dropdown.png' | absolute_url }}" alt="Terminal Dropdown" width="100%"/>
@@ -192,7 +204,7 @@ When working with ROS, it is often useful to have multiple terminals open. We pr
 
 ## 👣 Additional Steps
 
-### Windows Users
+### Windows Users (FIXME)
 
 In each terminal, you have to manually set the `ROS_HOSTNAME`.
 
@@ -215,16 +227,14 @@ This works out of the box in Linux; when a GUI is launched, the window pops up.
 {: .note}
 > Please note that this might have some rendering issues when the windows are resized, especially in RViz.
 
-### Using VNC (remote desktop) (Recommended for Windows/Mac)
+
+
+### Using VNC (remote desktop) (Recommended for Windows/Mac) FIXME
 
 {: .important}
 Works on Linux, Windows, and Mac
 
-1. Modify the [line #20](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L20) in the `.devcontainer/devcontainer.json` to
-```json
-"DISPLAY": ":1"
-```
-and **optionally** modify the [line #9](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L9) in the same file to set the resolution of the VNC viewer.
+1. Comment the [line #21](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/main/.devcontainer/devcontainer.json#L21) (`"DISPLAY": "${localEnv:DISPLAY}",`) and uncomment the [line #22](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/main/.devcontainer/devcontainer.json#L22) (`"DISPLAY": ":10",`) and **optionally** modify the [line #9](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L9) in the same file to set the resolution of the VNC viewer.
 
 
 2. Rebuild the workspace by opening the command palette (`Ctrl+Shift+P`) and selecting `Remote-Containers: Rebuild Container`.
@@ -248,9 +258,9 @@ You can run the following command to start the simulation:
 
 ```bash
 cd /workspaces/smb_ros2_workspace
-catkin (FIXME) build smb_gazebo # Build the package if not built
-source devel/setup.zsh # Source the workspace setup file if not sourced
-roslaunch smb_gazebo sim.launch
+smb_build_packages_up_to smb_gazebo direct_lidar_inertial_odometry # Build the package if not built
+source install/setup.bash # Source the workspace setup file if not sourced
+ros2 launch smb_gazebo smb_gazebo.launch.py
 ```
 
 If everything goes well, you should see the Gazebo simulation running and the GUI on your screen or VNC viewer.
