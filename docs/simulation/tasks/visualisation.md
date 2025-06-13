@@ -17,7 +17,7 @@ First of all, make sure the `smb_gazebo` has been already built successfully.
 
 ```bash
 # In the host pc, build the smb_gazebo package if you haven't already
-catkin (FIXME) build smb_gazebo
+ros2 launch smb_gazebo smb_gazebo.launch.py
 ```
 
 ## 👀 Visualisation
@@ -26,12 +26,12 @@ Run the following commands in the host pc to visualise the robot.
 
 ```bash
 # In the host pc
-roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true world:=WaA
+ros2 launch direct_lidar_inertial_odometry dlio.launch.py   rviz:=true   pointcloud_topic:=/pointcloud   imu_topic:=/imu
 ```
 
-The simulation in `WaA.world` (stands for Test venue in Wangen an der Aare) runs on the host PC (your computer). To run the simulation you do not need a connection to SMB.
+To run the simulation you do not need a connection to SMB.
 
-For more information about different simulation worlds, you could find details and test different worlds from [smb_common/smb_gazebo/worlds/](https://github.com/ETHZ-RobotX/smb_common/tree/master/smb_gazebo/worlds).
+For more information about different simulation worlds, you could find details and test different worlds from FIXME [smb_common/smb_gazebo/worlds/](https://github.com/ETHZ-RobotX/smb_common/tree/master/smb_gazebo/worlds).
 {: .note }
 
 ## 🎮 Teleoperation
@@ -42,7 +42,7 @@ Now you have two possibilities to drive with the robot.
 
     ```bash
     # In the host pc
-    roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true keyboard_teleop:=true
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=true
     ```
 
     - Use the following keys to move:
@@ -61,7 +61,7 @@ Now you have two possibilities to drive with the robot.
 
     Please refer to the [package documentation](http://wiki.ros.org/teleop_twist_keyboard#Controls) for more info.
 
-2. If you have a joystick connect it to the laptop. You can see the button configuration [here](../../info/robot-hardware.md#-joystick).
+2. FIXME If you have a joystick connect it to the laptop. You can see the button configuration [here](../../info/robot-hardware.md#-joystick).
 
     ```bash
     # In the host pc
