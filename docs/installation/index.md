@@ -8,13 +8,6 @@ has_toc: false
 
 # ⚙️ Installation
 
-There are several ways to set up the SMB software stack on your personal computer:
-
-1. **🚀 [SMB ROS2 Workspace](smb_ros2_workspace.md)** *(Recommended)*
+**🚀 [SMB ROS2 Workspace](smb_ros2_workspace.md)**
 - Based on VSCode Dev Container (VSCode + Docker + Dev Container extension)
 - The **smoothest** way to set up with pre-defined aliases and productivity tools.
-
-2. **🐳 [SMB Docker](smb-docker.md)**
-- Vanilla Docker setup with several helper scripts.
-
-3. **🐧 [Local Installation](local-installation.md)** on Ubuntu 20.04

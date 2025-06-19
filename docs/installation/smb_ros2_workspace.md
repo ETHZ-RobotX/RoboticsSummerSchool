@@ -46,7 +46,7 @@ Make sure to install the latest [Docker](https://docs.docker.com/get-docker/).
 
 #### Configure Docker Desktop (Windows/Mac)
 
-Turn on the Network Host mode in the experiemental features section in Docker Desktop settings.
+Turn on the Network Host mode in the Resources section in Docker Desktop settings.
 
 <p align="center">
   <img style="left;" src="{{ 'images/docker-desktop-host-networking.png' | absolute_url }}" width="80%" title="Docker Desktop Host Networking Option">
@@ -65,12 +65,12 @@ If you encounter any performance issues, you can adjust the resource allocation 
 - Ensure you have a working VSCode setup and that it is up to date to avoid any issues.
 - Install the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in VSCode.
 
-### **(Optional)** FIXME Install Real VNC Viewer
+### **(Optional)** Install Real VNC Viewer
 - Required if you want to run GUI application with VNC. 
 - Install Real VNC Viewer by following [the official website](https://www.realvnc.com/en/connect/download/viewer)
 
 ### **(Optional)** SSH-agent
-- To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent. See the **preparation step 2** [here](https://github.com/ETHZ-RobotX/smb_ros2_workspace#preparation FIXME) for more details.
+- To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent.
 
 ### **(Optional)** Fork the repository
 - If you want to customize your workspace and save your changes, you can fork the repository to your GitHub account and clone the forked repository.
@@ -89,7 +89,7 @@ If you encounter any performance issues, you can adjust the resource allocation 
 >      Click here for more details!
 >  </summary>
 >  
->  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance when using `catkin (FIXME) build` or other disk-intensive operations. If you encounter this issue, consider using Method 2.
+>  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance or other disk-intensive operations. If you encounter this issue, consider using Method 2.
 > </details>
 
 ##### 1) Clone the workspace
@@ -111,12 +111,12 @@ docker build --file .github/docker/Dockerfile --tag smb_ros2_workspace:main .
 ##### 3) Reopen workspace in dev container
 Press `Ctrl+Shift+P` or `F1` to open the command palette, type `Reopen in Container` and select the command to reopen the workspace in a Dev Container.
 
-### **Method 2**: Clone the workspace to a docker volume and open it in VScode FIXME. 
+### **Method 2**: Clone the workspace to a docker volume and open it in VScode. 
 
-[![Open in Dev Containers FIXME](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace)
 
 **TL;DR**: 
-Click the badge above or [here FIXME](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspaceFIXME) to open the workspace in a Dev Container. If the link does not work, follow the detailed steps below.
+Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace) to open the workspace in a Dev Container. If the link does not work, follow the detailed steps below.
 
 <details markdown="block">
   <summary>
@@ -177,43 +177,6 @@ smb_build_packages_up_to <package_name>
 
 ---
 
-## 🖥️ Using the Terminal
-
-### Integrated Terminal (FIXME)
-We use `zsh` by default in the integrated terminal. You can set up your shell preferences in `.vscode/settings.json` or click the dropdown button in the terminal to select the default shell profile.
-
-<img src="{{ 'images/terminal_dropdown.png' | absolute_url }}" alt="Terminal Dropdown" width="100%"/>
-
-Every terminal opened inside VSCode sources the system ROS setup file by default. To source the RSS catkin (FIXME) workspace setup file in newly opened terminals, we provide a shell alias `wssetup` defined as follows:
-
-```bash
-alias wssetup="source ${ROOT}/devel/setup.zsh"
-```
-
-where `${ROOT}` is a pre-defined variable pointing to the workspace root directory inside the container. You can simply use `wssetup` to source the workspace in the terminal.
-
-### Multiple Terminals with tmux
-When working with ROS, it is often useful to have multiple terminals open. We provide a pre-configured tmux session with multiple panes. You can start the tmux session by clicking the dropdown button in the terminal and selecting `smb-tmux`.
-
-<img src="{{ 'images/smb_tmux.png' | absolute_url }}" alt="Terminal Dropdown" width="100%"/>
-
-{: .note}
-`smb-tmux` runs `scripts/start_smb_tmux.sh` to start the tmux session under the hood. We highly recommend modifying the script to suit your needs. When remote accessing the the physical robots, you can copy the script to the physical robot and run it to have a similar tmux session.
-
----
-
-## 👣 Additional Steps
-
-### Windows Users (FIXME)
-
-In each terminal, you have to manually set the `ROS_HOSTNAME`.
-
-```bash
-export ROS_HOSTNAME=localhost
-```
-
----
-
 ## 🖼️ Visualizing GUI 
 
 ### Using X11 forwarding
@@ -229,7 +192,7 @@ This works out of the box in Linux; when a GUI is launched, the window pops up.
 
 
 
-### Using VNC (remote desktop) (Recommended for Windows/Mac) FIXME
+### Using VNC (remote desktop) (Recommended for Windows/Mac)
 
 {: .important}
 Works on Linux, Windows, and Mac
