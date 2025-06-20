@@ -17,7 +17,7 @@ First of all, make sure the `smb_gazebo` has been already built successfully.
 
 ```bash
 # In the host pc, build the smb_gazebo package if you haven't already
-smb_build_packages_up_to smb_gazebo
+ smb_build_packages_up_to meta_smb_sim
 ```
 
 ## 👀 Visualisation
@@ -26,8 +26,7 @@ Run the following commands in the host pc to visualise the robot.
 
 ```bash
 # In the host pc
-ros2 launch smb_gazebo smb_gazebo.launch.py
-
+ros2 launch smb_bringup smb_sim_exploration.launch.py
 ```
 
 To run the simulation you do not need a connection to SMB.

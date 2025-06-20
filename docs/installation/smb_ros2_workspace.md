@@ -105,7 +105,7 @@ code smb_ros2_workspace
 ##### 2) Build the Docker image:
 ```bash
 # Build the docker image using our Dockerfile
-docker build --file .github/docker/Dockerfile --tag smb_ros2_workspace:main .
+docker pull ghcr.io/ethz-robotx/smb_ros2_workspace:main
 ```
 
 ##### 3) Reopen workspace in dev container
