@@ -28,9 +28,9 @@ Under the hood, the workspace uses [Docker](https://www.docker.com/) and [VSCode
 
 This has been tested on the following platforms FIXME: 
 
-- ✅ Ubuntu 22.04/❌20.04 AMD64
+- ✅ Ubuntu 22.04/✅24.04 AMD64
 - ✅ Windows 11
-- ❌ MacOS Sonoma AMD64 and ARM64 (Apple Silicon)
+- ✅ MacOS Sequoia AMD64 and ARM64 (Apple Silicon)
 
 For other Linux distros, the steps should be similar to Ubuntu and work for both AMD64 and ARM64 architectures. For Windows 10, the steps should be similar to Windows 11. The same applies to different versions of MacOS.
 
@@ -78,40 +78,7 @@ If you encounter any performance issues, you can adjust the resource allocation 
 ---
 
 ## ⚙️ Open workspace locally
-
-### **Method 1**: Clone the workspace to your local file system and open it in VScode.
-
-{: .warning} 
-> For **macOS** and **Windows** users, we recommend using **Method 2** to avoid performance issues.
->
-> <details markdown="block">
->  <summary>
->      Click here for more details!
->  </summary>
->  
->  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance or other disk-intensive operations. If you encounter this issue, consider using Method 2.
-> </details>
-
-##### 1) Clone the workspace
-
-```bash
-# Replace the URL with your forked repository if you have forked it
-git clone https://github.com/ETHZ-RobotX/smb_ros2_workspace.git  
-
-# Open the workspace in VScode. You can also open the folder in VScode manually.
-code smb_ros2_workspace 
-```
-
-##### 2) Build the Docker image:
-```bash
-# Build the docker image using our Dockerfile
-docker pull ghcr.io/ethz-robotx/smb_ros2_workspace:main
-```
-
-##### 3) Reopen workspace in dev container
-Press `Ctrl+Shift+P` or `F1` to open the command palette, type `Reopen in Container` and select the command to reopen the workspace in a Dev Container.
-
-### **Method 2**: Clone the workspace to a docker volume and open it in VScode. 
+### **Method 1**: Clone the workspace to a docker volume and open it in VScode. (Reccomended) 
 
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ETHZ-RobotX/smb_ros2_workspace)
 
@@ -143,6 +110,38 @@ Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vsco
 >  </summary>
 >  This method will clone the workspace to a docker volume. File data will be chunked and managed by Docker. Though, the chunked data are stored in the local file system, you cannot access them directly. This may be useful if you want to keep your local file system clean or if you encounter performance issues when using the workspace on macOS or Windows. To know more about the docker volume, please refer to the [Docker documentation](https://docs.docker.com/storage/volumes/).
 > </details>
+
+### **Method 2**: Clone the workspace to your local file system and open it in VScode.
+
+{: .warning} 
+> For **macOS** and **Windows** users, we recommend using **Method 2** to avoid performance issues.
+>
+> <details markdown="block">
+>  <summary>
+>      Click here for more details!
+>  </summary>
+>  
+>  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance or other disk-intensive operations. If you encounter this issue, consider using Method 2.
+> </details>
+
+##### 1) Clone the workspace
+
+```bash
+# Replace the URL with your forked repository if you have forked it
+git clone https://github.com/ETHZ-RobotX/smb_ros2_workspace.git  
+
+# Open the workspace in VScode. You can also open the folder in VScode manually.
+code smb_ros2_workspace 
+```
+
+##### 2) Build the Docker image:
+```bash
+# Build the docker image using our Dockerfile
+docker pull ghcr.io/ethz-robotx/smb_ros2_workspace:main
+```
+
+##### 3) Reopen workspace in dev container
+Press `Ctrl+Shift+P` or `F1` to open the command palette, type `Reopen in Container` and select the command to reopen the workspace in a Dev Container.
 
 
 ---
