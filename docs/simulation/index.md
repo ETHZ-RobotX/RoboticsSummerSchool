@@ -23,8 +23,7 @@ In this document, we will refer to two types of terminals that you will be using
 In this section, the core tasks of navigation and exploration are explained, along with instructions on how to run them in simulation.
 
 - [👀 Visualization and Teleop](tasks/visualisation.md)
-- [📏 State Estimation](tasks/state-estimation.md)
-- [🧭 Navigation](tasks/navigation.md)
-- [🗺️ Mission Planning](tasks/mission-planning.md)
-- [🔍 Exploration](tasks/exploration.md)
-- [🕵️‍♂️ Object Detection](tasks/object-detection.md)
+- [📏 State Estimation]
+- [🧭 Navigation]
+- [🔍 Exploration]
+- [🕵️‍♂️ Object Detection]

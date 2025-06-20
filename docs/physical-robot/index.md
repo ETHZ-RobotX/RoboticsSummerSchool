@@ -31,10 +31,4 @@ The steps necessary to allow either manual or autonomous operations of the Super
         - [Hardware Driver Installation](setting-up/robot-workspace-setup.md#hardware-driver-installation)
         - [ROS Workspace Setup](setting-up/robot-workspace-setup.md#setting-up-the-hardware-related-ros-packages)
         - [Simplify Access to SMB](setting-up/robot-workspace-setup.md#simplify-access-to-smb)
-- [🎯 Tasks](tasks)
-    - [🔧 OPC](tasks/opc.md)
-    - [📡 State Estimation](tasks/state-estimation.md)
-    - [🚀 Navigation](tasks/navigation.md)
-    - [🗺️ Mission Planning](tasks/mission-planning.md)
-    - [🌍 Exploration](tasks/exploration.md)
-    - [🔍 Object Detection](tasks/object-detection.md)
+
