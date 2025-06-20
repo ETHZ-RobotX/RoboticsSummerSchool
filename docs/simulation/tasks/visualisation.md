@@ -17,7 +17,7 @@ First of all, make sure the `smb_gazebo` has been already built successfully.
 
 ```bash
 # In the host pc, build the smb_gazebo package if you haven't already
-ros2 launch smb_gazebo smb_gazebo.launch.py
+smb_build_packages_up_to smb_gazebo
 ```
 
 ## 👀 Visualisation
@@ -26,23 +26,20 @@ Run the following commands in the host pc to visualise the robot.
 
 ```bash
 # In the host pc
-ros2 launch direct_lidar_inertial_odometry dlio.launch.py   rviz:=true   pointcloud_topic:=/pointcloud   imu_topic:=/imu
+ros2 launch smb_gazebo smb_gazebo.launch.py
+
 ```
 
 To run the simulation you do not need a connection to SMB.
 
-For more information about different simulation worlds, you could find details and test different worlds from FIXME [smb_common/smb_gazebo/worlds/](https://github.com/ETHZ-RobotX/smb_common/tree/master/smb_gazebo/worlds).
-{: .note }
 
 ## 🎮 Teleoperation
 
-Now you have two possibilities to drive with the robot.
-
-1. You can drive the robot with the keyboard. If you want to drive the robot, make sure that the terminal where you launched the simulation (i.e. where the [`teleop_twist_keyboard`](http://wiki.ros.org/teleop_twist_keyboard) node is running) is selected while pressing the keys. To use the keyboard execute the following command:
+You can drive the robot with the keyboard. If you want to drive the robot, make sure that the terminal where you launched the simulation (i.e. where the [`teleop_twist_keyboard`](http://wiki.ros.org/teleop_twist_keyboard) node is running) is selected while pressing the keys. To use the keyboard run the following .sh file:
 
     ```bash
     # In the host pc
-    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=true
+    smb_teleop_twist_keyboard
     ```
 
     - Use the following keys to move:
@@ -61,12 +58,3 @@ Now you have two possibilities to drive with the robot.
 
     Please refer to the [package documentation](http://wiki.ros.org/teleop_twist_keyboard#Controls) for more info.
 
-2. FIXME If you have a joystick connect it to the laptop. You can see the button configuration [here](../../info/robot-hardware.md#-joystick).
-
-    ```bash
-    # In the host pc
-    roslaunch smb_gazebo sim.launch launch_gazebo_gui:=true
-    ```
-
-    The joystick mode might not work properly if you are using the **SMB ROS2 Workspace** or **SMB Docker** image on Windows and MacOS environments.
-    {: .warning }
