@@ -29,7 +29,7 @@ Under the hood, the workspace uses [Docker](https://www.docker.com/) and [VSCode
 This has been tested on the following platforms FIXME: 
 
 - ✅ Ubuntu 22.04/❌20.04 AMD64
-- ❌ Windows FIXME to test
+- ✅ Windows 11
 - ❌ MacOS Sonoma AMD64 and ARM64 (Apple Silicon)
 
 For other Linux distros, the steps should be similar to Ubuntu and work for both AMD64 and ARM64 architectures. For Windows 10, the steps should be similar to Windows 11. The same applies to different versions of MacOS.
