@@ -114,7 +114,7 @@ Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vsco
 ### **Method 2**: Clone the workspace to your local file system and open it in VScode.
 
 {: .warning} 
-> For **macOS** and **Windows** users, we recommend using **Method 2** to avoid performance issues.
+> For **macOS** and **Windows** users, we recommend using **Method 1** to avoid performance issues.
 >
 > <details markdown="block">
 >  <summary>
