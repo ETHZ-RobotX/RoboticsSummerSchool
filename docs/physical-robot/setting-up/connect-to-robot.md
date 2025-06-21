@@ -117,7 +117,7 @@ http://10.0.x.5
 4. Click Ok.
 5. To kill the vncserver 
 ```bash
-`vncserver -kill :2`
+vncserver -kill :2
 ```
 **The ip addresses of every SMB is 10.0.x.5 where x is the last digit of SMB Robot Number**.
 
