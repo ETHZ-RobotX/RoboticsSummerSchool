@@ -191,24 +191,22 @@ This works out of the box in Linux; when a GUI is launched, the window pops up.
 
 
 
-### Using VNC (remote desktop) (Recommended for Windows/Mac)
+### Using VNC on your own laptop (remote desktop) (Recommended for Windows/Mac)
 
 {: .important}
 Works on Linux, Windows, and Mac
 
-1. Comment the [line #21](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/main/.devcontainer/devcontainer.json#L21) (`"DISPLAY": "${localEnv:DISPLAY}",`) and uncomment the [line #22](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/main/.devcontainer/devcontainer.json#L22) (`"DISPLAY": ":10",`) and **optionally** modify the [line #9](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/372af7b42366f53c7fa6f94b59a8d87f0e9c2255/.devcontainer/devcontainer.json#L9) in the same file to set the resolution of the VNC viewer.
+1. Set the [line #26](https://github.com/ETHZ-RobotX/smb_ros2_workspace/blob/main/.devcontainer/devcontainer.json#L26) (`""VNC_ENABLED": "false"",`) to (`""VNC_ENABLED": "true"",`).
 
 
 2. Rebuild the workspace by opening the command palette (`Ctrl+Shift+P`) and selecting `Remote-Containers: Rebuild Container`.
 
 **Use VNC Viewer to connect to the desktop environment of the workspace.**
 
-1. Open the RealVNC Viewer.
-2. File -> New Connection.
-3. Add `localhost:5901` as the VNC Server. The default password is `robotx`.
+1. vncserver :10
+2. Go to `http://localhost:8455/`
+3. The default username and password are `robotx`.
 4. Click Ok.
-5. Click and open the new connection.
-6. Ignore the unencrypted connection issue.
 
 Now you can see the desktop environment inside the VNC Viewer. You may need to adjust the picture quality settings in the VNC Viewer settings to get the best experience.
 
