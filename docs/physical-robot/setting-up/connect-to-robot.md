@@ -107,12 +107,22 @@ The following instructions will contain the configurations for SMB264.
 ### Installation
 
 ```bash
-1. vncserver :10
-2. Go to `http://10.0.x.5` 
+vncserver :2
+```
+2. Go to 
+```bash 
+http://10.0.x.5 
+```
 3. The default username and password are `robotx`.
 4. Click Ok.
+5. To kill the vncserver 
+```bash
+`vncserver -kill :2`
 ```
 **The ip addresses of every SMB is 10.0.x.5 where x is the last digit of SMB Robot Number**.
+
+
+
 
 #### Connect to the SMB
 To enter the SMB just `ssh` into it as described in the Connecting to the SMB section. Please, make sure that you are not connected to the local SMB network.

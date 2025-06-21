@@ -206,8 +206,13 @@ Works on Linux, Windows, and Mac
 2. Go to `http://localhost:8455/`
 3. The default username and password are `robotx`.
 4. Click Ok.
+5. To kill the vnc `vncserver -kill :10`
 
 Now you can see the desktop environment inside the VNC Viewer. You may need to adjust the picture quality settings in the VNC Viewer settings to get the best experience.
+
+If you have issues with step 2 on Windows/Mac go to the ports and set port to 8455 as shown here
+  <img style="right;"  src="../../images/porting.png" width="300" title="Porting">
+
 
 ### Try a GUI application
 
