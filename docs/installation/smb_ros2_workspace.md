@@ -210,8 +210,11 @@ Works on Linux, Windows, and Mac
 
 Now you can see the desktop environment inside the VNC Viewer. You may need to adjust the picture quality settings in the VNC Viewer settings to get the best experience.
 
-If you have issues with step 2 on Windows/Mac go to the ports and set port to 8455 as shown here
-  <img style="right;"  src="../../images/porting.png" width="300" title="Porting">
+If you have issues with step 2 on Windows/Mac go to the ports and add port as 8455 and be sure that running process is not empty.
+<p align="center">
+  <img src="../../images/porting.png" width="700" title="Porting">
+</p>
+
 
 
 ### Try a GUI application
