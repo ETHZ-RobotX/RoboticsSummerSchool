@@ -82,12 +82,6 @@ ssh <user>@10.0.x.5
 
 Once you are connected to the SMB you will see an IP address and port tuple on the terminal starting with `http://`. Please save it since we will need it in the next step. 
 
-If you do not see such a tupple, please start the roscore and check the part `ROS_MASTER_URI`.
-
-```bash
-# In the terminal of SSH
-roscore
-# See the part of ROS_MASTER_URI
 ```
 
 #### Network Sharing
@@ -103,61 +97,6 @@ nmcli connection show
 # To connect the SMB to Internet (you can specify the connections available from above command, e.g: sudo nmcli connection up mavt-asl-iot)
 sudo nmcli connection up
 ```
-
-If by any case the 4G network is not working and you are connected to internet using `nmcli connection up`, you may want to share the internet with jetson and your personal computer connected to WiFi.
-
-Sharing with the Jetson,
-```bash
-# in the SMB
-./ics_gpu.sh
-```
-
-Sharing with the PC,
-```bash
-# in the SMB
-./ics_gpu.sh
-
-# in the Host
-## in Ubuntu
-sudo route add default 10.0.x.5 # replace x with SMB26X if it's 263 X is 3
-sudo systemd-resolve --set-dns=10.0.x.1 --set-dns=8.8.8.8 --interface=eth0 # use your network interface, e.g: eth0
-
-## in Mac
-sudo route delete default
-sudo route add default 10.0.x.5 # replace x with SMB26X if it's 263 X is 3
-sudo networksetup -setdnsservers Wi-Fi 10.0.x.1 8.8.8.8 # use your network interface, e.g: Wi-Fi, to list all networks use `networksetup -listallhardwareports`
-```
-
-## Visualization Settings
-
-In order to use the visualization tools of ROS, we will set the SMB as ROS master on our local machine:
-
-```bash
-# In the terminal of host pc. 
-export ROS_MASTER_URI=http://10.0.x.5:<port>
-# the ip and port tuple we have saved in the previous step  
-```
-
-Now we can run SMB software and visualize it in the host pc. 
-
-In order to give commands from the host pc to SMB, ROS_IP should be set. 
-
-```bash
-# In the terminal of host pc
-
-ifconfig
-# See the ip addres of wlp4s0
-# It is probably 10.0.x.100
-
-export ROS_IP=<wlp4s0_ip>
-# the ip and port tuple we have saved in the previous step  
-```
-
-Note that at every new terminal you have to repeat the steps under the title of Running the Software. Please refer to [the Notions and Devices document](../NotionsAndDevices.md) for more information related to 'export' command.
-{: .note }
-
-To use the packages and run the software please refer to the [How to Run Software](../core-software/HowToRunSoftware.md)
-{: .note }
 
 
 ## How to establish the VPN connection? (Optional)
