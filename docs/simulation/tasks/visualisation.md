@@ -26,7 +26,7 @@ Run the following commands in the host pc to visualise the robot.
 
 ```bash
 # In the host pc
-ros2 launch smb_bringup smb_sim_exploration.launch.py
+ros2 launch smb_bringup smb_sim_se.launch.py
 ```
 
 To run the simulation you do not need a connection to SMB.
@@ -34,7 +34,7 @@ To run the simulation you do not need a connection to SMB.
 
 ## 🎮 Teleoperation
 
-You can drive the robot with the keyboard. If you want to drive the robot, make sure that the terminal where you launched the simulation (i.e. where the [`teleop_twist_keyboard`](http://wiki.ros.org/teleop_twist_keyboard) node is running) is selected while pressing the keys. To use the keyboard run the following .sh file:
+You can drive the robot with the keyboard. If you want to drive the robot, make sure that the terminal where you launched the simulation (i.e. where the [`teleop_twist_keyboard`](http://wiki.ros.org/teleop_twist_keyboard) node is running) is selected while pressing the keys. To use the keyboard run the following alias:
 
     ```bash
     # In the host pc
@@ -57,3 +57,19 @@ You can drive the robot with the keyboard. If you want to drive the robot, make 
 
     Please refer to the [package documentation](http://wiki.ros.org/teleop_twist_keyboard#Controls) for more info.
 
+# 🔍 Navigation
+The goal of this section is to run the robot simulation using Gazebo, visualise the SMB robot in RViz, putting waypoints and goalpoints to demonstrate the autonomous capabilities of the robot.
+
+```bash
+# In the host pc
+ros2 launch smb_bringup smb_sim_navigation.launch.py 
+```
+
+# 🔍 Exploration
+
+In this section we will see a fully autonomous robot exploring the environment working with far planner and ground truth.🥳
+
+```bash
+# In the host pc
+ros2 launch smb_bringup smb_sim_exploration.launch.py
+```
