@@ -133,7 +133,7 @@ git clone https://github.com/ETHZ-RobotX/smb_ros2_workspace.git
 code smb_ros2_workspace 
 ```
 
-##### 2) Build the Docker image:
+##### 2) Pull the Docker image:
 ```bash
 # Build the docker image using our Dockerfile
 docker pull ghcr.io/ethz-robotx/smb_ros2_workspace:main
