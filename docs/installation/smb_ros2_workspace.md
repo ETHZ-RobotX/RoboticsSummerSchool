@@ -65,9 +65,8 @@ If you encounter any performance issues, you can adjust the resource allocation 
 - Ensure you have a working VSCode setup and that it is up to date to avoid any issues.
 - Install the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in VSCode.
 
-### **(Optional)** Install Real VNC Viewer
+### **(Optional)** Install KasmVNC Viewer
 - Required if you want to run GUI application with VNC. 
-- Install Real VNC Viewer by following [the official website](https://www.realvnc.com/en/connect/download/viewer)
 
 ### **(Optional)** SSH-agent
 - To use SSH (for pushing commits to GitHub and connecting robots over SSH) inside container without copying your private ssh-key, you need to setup ssh-agent locally and add your ssh key to the ssh-agent.
