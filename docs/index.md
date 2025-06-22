@@ -24,7 +24,7 @@ Welcome to the documentation of the SuperMegaBot (SMB) for the ETHZ Robotics Sum
 ## 📘 Introduction
 This documentation aims to introduce the basic usage of the SuperMegaBot, a 4-wheeled skid-steered robot, in both simulation and real robot scenarios. Furthermore, it provides instructions on how to run different tasks using the robot and includes step-by-step tutorials.
 
-<!-- The experience is twofold: a [simulation environment](#smb-simulation) using Gazebo, and the physical robot. The software stack runs on ROS Noetic FIXME. -->
+The experience is twofold: a [simulation environment](#smb-simulation) using Gazebo, and the physical robot. The software stack runs on ROS2 Jazzy.
 
 ## 📥 Install the SMB Software locally
 

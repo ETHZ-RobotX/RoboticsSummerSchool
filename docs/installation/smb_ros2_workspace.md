@@ -120,7 +120,7 @@ Click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vsco
 >      Click here for more details!
 >  </summary>
 >  
->  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance or other disk-intensive operations. If you encounter this issue, consider using Method 2.
+>  The Dev Containers extension uses "bind mounts" to source code in your local filesystem by default. While this is the simplest option, on macOS and Windows, you may encounter slower disk performance or other disk-intensive operations. If you encounter this issue, consider using Method 1.
 > </details>
 
 ##### 1) Clone the workspace
