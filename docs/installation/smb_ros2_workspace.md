@@ -212,7 +212,7 @@ Now you can see the desktop environment inside the VNC Viewer. You may need to a
 
 If you have issues with step 2 on Windows/Mac go to the ports and add port as 8455 and be sure that running process is not empty.
 <p align="center">
-  <img src="../../images/porting.png" width="700" title="Porting">
+  <img src="../../images/porting.png" width="500" title="Porting">
 </p>
 
 
