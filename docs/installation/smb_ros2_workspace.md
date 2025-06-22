@@ -26,7 +26,7 @@ The **smb_ros2_workspace** is a all-in-one development environment for the Super
 
 Under the hood, the workspace uses [Docker](https://www.docker.com/) and [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers) to provide a consistent development environment across different platforms.
 
-This has been tested on the following platforms FIXME: 
+This has been tested on the following platforms: 
 
 - ✅ Ubuntu 22.04/✅24.04 AMD64
 - ✅ Windows 11
@@ -289,5 +289,5 @@ Modify build arguments `VNC_RESOLUTION` in the `.devcontainer/devcontainer.json`
 #### **reverse-i-search**
 It is common to enter a command that you have used before. You can use `Ctrl+r` to search for the command in the history. We integrate `fzf` with the shell by default to provide a more interactive reverse-i-search experience.
 
-#### **`Tab` completion in zsh**
-We use `zsh` as the default shell. You can use `Tab` to auto-complete the command, file, directory name or even ros launch file parameters. When you press `Tab` twice, it will show you all the possible completions, and you can select the one you want by continuously pressing `Tab` until the cursor is on the desired completion.
+#### **`Tab` completion in bash**
+We use `bash` as the default shell. You can use `Tab` to auto-complete the command, file, directory name or even ros2 launch file parameters. When you press `Tab` twice, it will show you all the possible completions.
