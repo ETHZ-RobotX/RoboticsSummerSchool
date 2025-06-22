@@ -114,7 +114,7 @@ And now it is time to launch:
 
 ```bash
 # In the host pc
-ros2 launch smb_bringup smb_sim_gazebo.launch.py
+ros2 launch smb_bringup gazebo.launch.py
 ```
 ```bash
 ros2 launch object_detection object_detection.launch.py

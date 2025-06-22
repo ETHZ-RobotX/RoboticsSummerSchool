@@ -27,8 +27,3 @@ The steps necessary to allow either manual or autonomous operations of the Super
 - [🔧 Setting Up](setting-up)
     - [⚡ Powerup and Drive](setting-up/powerup-and-drive.md)
     - [🔌 Connect to Robot](setting-up/connect-to-robot.md)
-    - [🏗️ Setup Robot Workspace](setting-up/robot-workspace-setup.md)
-        - [Hardware Driver Installation](setting-up/robot-workspace-setup.md#hardware-driver-installation)
-        - [ROS Workspace Setup](setting-up/robot-workspace-setup.md#setting-up-the-hardware-related-ros-packages)
-        - [Simplify Access to SMB](setting-up/robot-workspace-setup.md#simplify-access-to-smb)
-
