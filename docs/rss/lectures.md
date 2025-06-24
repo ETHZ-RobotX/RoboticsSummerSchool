@@ -15,6 +15,6 @@ nav_exclude: false
 - State Estimation: [PDF Slides](https://drive.google.com/file/d/1IrSWQBC1u-lWQHM1yI87U4subOksVUzn/view?usp=sharing)
 - SLAM: [PDF Slides](https://drive.google.com/file/d/1YJPcdhAx83Oa9JdryjhY-R8GAXUKFcfh/view?usp=sharing)
 - Trajectory Optimization: [PDF Slides](#)
-- Path Planning: [PDF Slides](#)
-- Exploration: [PDF Slides](#)
+- Path Planning: [PDF Slides](https://drive.google.com/file/d/1afn3SG-J9h9VjLcZxKQ21dnhrtL8OhJg/view?usp=sharing)
+- Exploration: [PDF Slides](https://drive.google.com/file/d/1--isNHjhUOZhRTB5J6gO1cXXH_ZKf9YN/view?usp=sharing)
 - Camera Geometry: [PDF Slides](#)
